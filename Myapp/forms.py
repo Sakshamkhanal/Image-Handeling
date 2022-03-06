@@ -1,12 +1,9 @@
-from dataclasses import fields
-from pyexpat import model
 from socket import fromshare
-from django import forms
+from django.forms import ModelForm
 from .models import Image
 
-class form_render(forms.Modelform):
-    class meta:
+class Imageforms(ModelForm):
+    class Meta:
         model = Image
-        fields = "__all__"
-
+        fields =['text','photo']
 
